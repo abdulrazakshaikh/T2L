@@ -1,0 +1,141 @@
+/*============================ TABLE STYLE START ============================*/
+.table{
+  margin-bottom:  0;
+}
+.table thead tr th,
+.table tbody tr td{
+  font-size: 0.85rem;
+  vertical-align: middle;
+}
+.table>:not(:first-child) {
+    border-top: 0px solid currentColor;
+}
+.table thead tr th.action-th,
+.table tbody tr td.action-td{
+  max-width: 180px;
+  width: 180px;
+  text-align: center;
+}
+.table tr td.action-td .btn span{
+  font-size: 1.25rem;
+}
+.table tr td.action-td .btn:hover{ 
+  background-color: var(--primary-color-light);
+  color: var(--primary-color);
+}
+
+.table-searchbox {
+  margin: 10px 0px;
+}
+.table-searchbox:focus-within .input-group-text{
+  color:  var(--primary-color);
+}
+.table-searchbox .input-group-text{
+  background-color: transparent;
+  border:  0px;
+  color:  var(--textlight-color);
+  padding: 0.5rem 0;
+}
+.table-searchbox .form-control{
+  padding: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  border:  0px;
+  font-weight: 500;
+
+}
+.table-searchbox .form-control:focus{
+  box-shadow: none;
+    border-color: var(--primary-color);
+}
+@media screen and (min-width : 768px){
+  .table tr td:first-child, 
+  .table tr th:first-child{
+    padding-left: 2rem;
+  }
+  .table tr td:last-child, 
+  .table tr th:last-child {
+      padding-right: 2rem;
+  }
+}
+
+@media screen and (max-width: 990px) {
+    table.table-respon{ 
+        width: 100%; 
+        margin:  0px;
+    }
+    table.table-respon tr td:first-child.table-check{ 
+        display: inline-block;
+    }
+    table.table-respon tr td{
+        display: flex;
+        align-items: center;
+        /*justify-content: space-between;*/
+        flex-wrap: wrap;
+        padding: .5rem; 
+        border: 0;
+    } 
+    table.table-respon tfoot{
+      margin: 10px 0;
+    }
+    table.table-respon tfoot tr{
+      border: 1px solid var(--border-color);
+      max-width: 100%;
+      display: grid;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    table.table-respon tfoot tr td{
+      border: 0;
+      font-weight:  600;
+    }
+    table.table-respon tfoot tr td:empty{
+      display: none;
+    }
+    table.table-respon tr td:last-child {
+      border: 0;
+    }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    table.table-respon thead tr { 
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    table.table-respon tbody{
+      padding: 1rem;
+      display: table-cell;
+    }
+    table.table-respon tbody tr{ 
+      border: 1px solid var(--border-color);
+      max-width: 100%;
+      display: grid;
+      border-radius: 10px;
+      margin-bottom: 7px;
+    }
+    table.table-respon tbody tr:not(:last-child){
+      margin-bottom: 0.5rem;
+    }
+    
+    table.table-respon td:not(.action-td):before{ 
+        content: attr(data-column);
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--textlight-color);
+        text-align:  left;
+        padding-right: 5px;
+    }
+    table.table-respon .action-th, 
+    table.table-respon .action-td{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100% !important;
+        max-width: 100% !important;
+      margin: 0;
+    }
+    table.table-respon .action-td .btn{
+      width: auto;
+      flex: 1;
+    }
+}
+/*============================= TABLE STYLE END =============================*/
